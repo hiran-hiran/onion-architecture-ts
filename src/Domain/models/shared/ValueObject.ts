@@ -1,6 +1,7 @@
 import { isEqual } from "lodash";
 
 export abstract class ValueObject<T, U> {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-expect-error
   private _type: U;
 

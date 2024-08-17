@@ -23,7 +23,6 @@ export class BookId extends ValueObject<string, "BookId"> {
     // 実際の実装ではここにチェックディジットを計算するロジックが必要です。
     return isbn10.length === 10; // ここを実際のチェックディジット計算に置き換える
   }
-
   private isValidIsbn13(isbn13: string): boolean {
     // ISBN-13 のバリデーションロジックを実装
     // ここでは簡単な例を示しますが、実際にはより複雑なチェックが必要です

@@ -1,16 +1,19 @@
+import { DomainEventStorable } from "Domain/shared/DomainEvent/DomainEventStorable";
 import { BookId } from "./BookId/BookId";
 import { Price } from "./Price/Price";
 import { StatusEnum } from "./Stock/Status/Status";
 import { Stock } from "./Stock/Stock";
 import { Title } from "./Title/Title";
 
-export class Book {
+export class Book extends DomainEventStorable {
   private constructor(
     private readonly _bookId: BookId,
     private _title: Title,
     private _price: Price,
     private readonly _stock: Stock
-  ) {}
+  ) {
+    super();
+  }
 
   static create(bookId: BookId, title: Title, price: Price) {
     return new Book(bookId, title, price, Stock.create());
